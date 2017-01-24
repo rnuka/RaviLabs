@@ -85,7 +85,7 @@ public class RegularExpressionMatching {
         System.out.println("****** TESTCASE-3 (Using DP) **********");
         String input="ab";
         String pattern = "a*";
-        System.out.println("pattern:"+pattern+"  mathches with input:"+input+" ::"
+        System.out.println("pattern:"+pattern+"  matches with input:"+input+" ::"
                 +isMatchDp(input,pattern));
 
     }
@@ -94,7 +94,7 @@ public class RegularExpressionMatching {
         System.out.println("****** TESTCASE-2 **********");
         String input="baaabab";
         String pattern = "*****ba*****ab";
-        System.out.println("pattern:"+pattern+"  mathches with input:"+input+" ::"
+        System.out.println("pattern:"+pattern+"  matches with input:"+input+" ::"
                 +isMatch(input,pattern,input.length()-1,pattern.length()-1));
 
     }
@@ -103,7 +103,7 @@ public class RegularExpressionMatching {
         System.out.println("****** TESTCASE-1 **********");
         String input="ab";
         String pattern = "a*";
-        System.out.println("pattern:"+pattern+"  mathches with input:"+input+" ::"
+        System.out.println("pattern:"+pattern+"  matches with input:"+input+" ::"
                 +isMatch(input,pattern,input.length()-1,pattern.length()-1));
 
     }
