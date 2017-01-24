@@ -26,11 +26,15 @@ Output : 46
 
 Link: http://www.geeksforgeeks.org/find-maximum-dot-product-two-arrays-insertion-0s/
 
+************************************************************
 
+Sub-problem::
+-------------
 max_product(a,b,m,n) = max{ max_product(a,b,m-1,n-1)+(m*n),
                               max_product(a,b,m-1,n)
                              }
                      = m*n when n=1
+************************************************************
 
  */
 public class MaximumDotProductOf2ArraysWith0Insertions {
@@ -41,16 +45,19 @@ public class MaximumDotProductOf2ArraysWith0Insertions {
 
     public int maxDotProduct(int[] a, int[] b, int m, int n){
         if(m<0 || n<0){
-            return 1;
+            return 0;
         }
-        System.out.println("m="+m+" and n="+n+" product is::"+(a[m]*b[n]));
-        if(m==0 || n==0){
-            return a[m]*b[n];
+        int maxProduct = 1;
+        if(m==0 && n==0){
+             maxProduct = a[m]*b[n];
         }else{
 
-            return Math.max(maxDotProduct(a,b,m-1,n-1)+a[m]*b[n],
+             maxProduct = Math.max(maxDotProduct(a,b,m-1,n-1)+a[m]*b[n],
                             maxDotProduct(a,b,m-1,n));
+
         }
+        return maxProduct;
+
     }
 
     void testcase1(int[] a , int[] b){
