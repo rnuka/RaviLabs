@@ -24,20 +24,30 @@ public class SumList {
         int carry = 0;
         Node n1 = first;
         Node n2 = second;
-        Node sum = null;
+
+        Node sumHead = null;
+
         while(n1 != null || n2 !=null) {
 
-            int currentSum = n1.data + n2.data + carry;
+            int currentSum = carry;
 
-            if(currentSum > 10) {
-                carry = currentSum / 10;
-                currentSum = currentSum % 10;
+            if(n1 != null) {
+                currentSum += n1.data;
             }
 
+            if(n2 != null) {
+                currentSum += n2.data;
+            }
+
+            carry = currentSum > 10 ? 1 : 0;
+
+            currentSum = currentSum % 10;
+
             Node n = new Node(currentSum);
-            n.next = sum;
-            sum = n;
-            System.out.println("sum.data="+sum.data);
+
+            n.next = sumHead;
+            sumHead = n;
+            System.out.println("sum.data="+sumHead.data);
 
             n1 = n1.next;
             n2 = n2.next;
@@ -45,10 +55,10 @@ public class SumList {
         //if any carry is left after last sum
         if(carry > 0){
             Node n = new Node(carry);
-            n.next = sum;
-            sum = n;
+            n.next = sumHead;
+            sumHead = n;
         }
-        return sum;
+        return sumHead;
     }
 
     //test

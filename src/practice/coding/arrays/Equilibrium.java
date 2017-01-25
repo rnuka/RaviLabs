@@ -50,6 +50,7 @@ public class Equilibrium {
 
 
         //if sum is a odd number return -1 and no need to check further as no equilibrium exists if sum is odd
+        //Wrong ?
         if(totalSum%2 !=0){
             return -1;
         }

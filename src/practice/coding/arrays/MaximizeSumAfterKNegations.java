@@ -25,14 +25,14 @@ public class MaximizeSumAfterKNegations {
 
     public int maxSum(int[] input, int k){
         //populate a priority queue based on input.
-        PriorityQueue pq = new PriorityQueue();
+        PriorityQueue<Integer> pq = new PriorityQueue();
         for(int i=0; i<input.length; i++){
             pq.add(input[i]);
         }
 
         //negative min element always by k times
         for(int counter = 0; counter<k; counter++){
-            pq.add(-1 * (int)pq.poll());
+            pq.add(-1 * pq.poll());
         }
 
 
