@@ -5,7 +5,7 @@ package practice.coding.math;
  */
 public class SquareRoot {
 
-    static double square_root(double a, double epsilon) {
+    /*static double square_root(double a, double epsilon) {
 
         //exception case
         if (Math.abs(a) < epsilon)
@@ -22,10 +22,10 @@ public class SquareRoot {
            // x = (x+y)/2;
         }
 
-    }
+    }*/
 
 
-    public static double sqrt(int number) {
+    public static double sqrt(double number) {
         double t;
 
         double squareRoot = number / 2;
@@ -42,7 +42,7 @@ public class SquareRoot {
     public static void main(String[] args) {
         System.out.println("start");
         //System.out.println("method1: "+square_root(5, 1e-6));
-        System.out.println("method2: "+sqrt(5));
+        System.out.println("method2: "+sqrt(2));
         System.out.println("end");
 
     }

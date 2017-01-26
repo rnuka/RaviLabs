@@ -44,18 +44,20 @@ public class MaximumDotProductOf2ArraysWith0Insertions {
     }
 
     public int maxDotProduct(int[] a, int[] b, int m, int n){
+
         if(m<0 || n<0){
             return 0;
         }
-        int maxProduct = 1;
+
+        int maxProduct;
+
         if(m==0 && n==0){
              maxProduct = a[m]*b[n];
         }else{
-
              maxProduct = Math.max(maxDotProduct(a,b,m-1,n-1)+a[m]*b[n],
                             maxDotProduct(a,b,m-1,n));
-
         }
+
         return maxProduct;
 
     }
