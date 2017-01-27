@@ -3,6 +3,8 @@ package practice.coding.sort;
 
 /*
 
+http://www.geeksforgeeks.org/nearly-sorted-algorithm/
+
 Let the partially sorted array be array [0, 1, n - 1] . The algorithm to sort this array will be :
 
 Solution Steps:
@@ -30,4 +32,12 @@ Therefore, total time complexity = O(nlogk)
 
 * */
 public class SortPartiallySortedArray {
+    void sort(int[] input, int k){
+        for(int i=0; i<input.length; i=i+k){
+            //create a sliding window of 2k
+            for(int j=i; j<(i+2*k); j++){
+
+            }
+        }
+    }
 }

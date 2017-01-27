@@ -53,8 +53,6 @@ public class Trie {
 
     }
 
-
-
     //TrieNode structure
     class TrieNode{
         TrieNode[] children;
