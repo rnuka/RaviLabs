@@ -7,12 +7,7 @@ import java.util.ArrayList;
 /*
 Question:
 
-Find Largest Value in Each Tree Row My SubmissionsBack To Contest
-User Accepted: 851
-User Tried: 878
-Total Accepted: 943
-Total Submissions: 2140
-Difficulty: Medium
+Find Largest Value in Each Tree Row
 You need to find the largest value in each row of a binary tree.
 
 Example:
