@@ -1,4 +1,4 @@
-package practice.coding.arrays;
+package practice.coding.customDataStructures;
 
 import java.util.Arrays;
 

@@ -42,17 +42,8 @@ public class AmazingNumbersIndexInCircularArray {
 
     //Optimal Solution: O(n)
     int getMaxAmazingNumbersPosition(int[] input){
-         /*class Interval{
-            int startIndex;
-            int endIndex;
-            public Interval(int s, int e){
-                startIndex = s;
-                endIndex = e;
-            }
-         }*/
 
         //Traverse array and add inputs to the interval list
-        //List<Interval> intervals = new ArrayList<>();
         int length = input.length;
         int[] count = new int[length];
         for(int i=0; i<length; i++){
@@ -60,13 +51,10 @@ public class AmazingNumbersIndexInCircularArray {
             if(!(input[i]>length-1)){
                 int start = (i+1)%(length);//next available index
                 int end =   (i+(length-input[i]))%length;//Tricky part: i + offset(n-input[i])
-                //int end = (length + (i - input[i])) % length;
-                //Interval interval = new Interval(start, end);
                 count[start]++;
                 if(end+1<(length)){
                     count[end+1]--;
                 }
-                //count[(end+1)%(length-1)]--;
             }
         }
 

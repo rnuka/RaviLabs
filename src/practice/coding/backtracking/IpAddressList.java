@@ -41,6 +41,8 @@ public class IpAddressList {
         if(octant == 4 && Integer.parseInt(currentInput) <= 255){
             results.add(currentBuffer+currentInput); //to remove . at end
             return;
+        }else if(octant >= 4){ //all invalid cases.
+            return;
         }
 
         //other cases
@@ -50,10 +52,7 @@ public class IpAddressList {
             //validate if currentBuffer is valid i.e. 0-255
             if(Integer.parseInt(temp) <= 255){
                 String remainingStr = currentInput.substring(i+1);
-                if (remainingStr.length() >= (4 - octant)
-                        && remainingStr.length() <= (4-octant)*3) {
                     ipAddressList(remainingStr, octant + 1, results, currentBuffer+temp + ".");
-                }
             }
         }
         return;

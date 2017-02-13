@@ -29,6 +29,7 @@ Approach: n length rod and assume you can cut at 1..n-1 anywhere, then
 maxProduct(n) =     max  {  i * (n-i) ,
                             i * maxProduct(n-i) }
                  for all i:1 to n-1
+              = 1 when n <= 1
 
 
 
@@ -38,7 +39,7 @@ public class MaximumProductCutting {
 
     //Recursion approach:
     public static int maxProduct(int n){
-        if(n<=1){
+        if(n <= 1){
             return 1;
         }
         int maxProduct = Integer.MIN_VALUE;

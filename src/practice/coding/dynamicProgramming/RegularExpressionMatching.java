@@ -22,7 +22,10 @@ Approach:
 match(s,p,i,j) = true when match(s,p,i-1,j-1) is true and p(j)='?' or p(j)=s(i)
                = true when p(j)='*' & match(s,p,i-1,j) or match(s,p,i,j-1) is true.
                                 i.e. consider * as empty or use it for char replacement.
+               = true when i<1 and j<1 i.e. both are empty strings
+               = false when (i<1 or j<1) and (j>=1 or i>=1) i.e one empty and other non empty
                = false otherwise
+
  */
 public class RegularExpressionMatching {
 

@@ -21,6 +21,9 @@ Input: Given the following 3x6 height map:
 Output: 4. (Explanation: Trapped in second row between second (1unit), third (2units) and fifth column (1unit)
  */
 
+/*
+Approach: Start from outer ring and move towards center.
+ */
 public class TrapRainWater2D {
     public int trapRainWater(int[][] heightMap) {
         class Cell{
@@ -39,25 +42,37 @@ public class TrapRainWater2D {
 
         int m = heightMap.length;
         int n = heightMap[0].length;
+
         PriorityQueue<Cell> pq = new PriorityQueue<>((v1,v2)->v1.h - v2.h);
         boolean[][] visited = new boolean[m][n];
+
+        //Add top row and bottom row to queue
         for(int i = 0; i < n; i++){
             visited[0][i] = true;
             visited[m-1][i] = true;
             pq.offer( new Cell(0, i, heightMap[0][i]));
             pq.offer(new Cell(m-1, i, heightMap[m-1][i]));
         }
+
+        //Add first column and last column (1 to m-2 rows cells)
         for(int i = 1; i < m-1; i++){
             visited[i][0] = true;
             visited[i][n-1] = true;
             pq.offer(new Cell(i, 0, heightMap[i][0]));
             pq.offer(new Cell(i, n-1, heightMap[i][n-1]));
         }
+
+
         int[] xs = {0,  0, 1, -1};
         int[] ys = {1, -1, 0,  0};
+
         int sum = 0;
+
+        //Traverse through priority queue and calculate sum. If new cells are uncovered, then add them to priority queue.
         while (!pq.isEmpty()) {
             Cell cell = pq.poll();
+            //For each cell, traverse four surroundings and see if any water can be trapped.
+            //Add new uncovered cells to priority queue.
             for (int i = 0; i < 4; i++) {
                 int nx = cell.x + xs[i];
                 int ny = cell.y + ys[i];

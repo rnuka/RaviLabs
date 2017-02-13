@@ -27,6 +27,7 @@ public class LongestConsecutiveSequence {
 
     public int longestConsecutiveElementSequence(int[] input){
         Set<Integer> inputSet = new HashSet<>();
+        //TODO: Seperate method populate(int[] from, Set<Integer> to)
         for(int i: input){
             inputSet.add(i);
         }

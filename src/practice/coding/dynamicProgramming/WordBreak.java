@@ -30,7 +30,7 @@ f(2) = true if f(1) is true & dict contains s.charAt(1) or
 f(3) = true if f(2) is true and dict contains s.charAt(2) or
        true f(0)&&substring(0-3) or f(1)&&substring(1-3) or f(2)&&substring(2-3) ...
 f(n) = true if      f(i) is true && (substring(i-n) contains in dictionary )
-                   for all i:0->n
+                   for all i:0->n-1
  */
 
 import java.util.HashSet;
@@ -42,13 +42,19 @@ public class WordBreak {
     //Using Recursion
     public boolean isValidWordBreak(String input, Set<String> dictionary){
 
-        if(input==null || input.length()<=0){
+        //null cases
+        if(input==null || input.length()<=0 || dictionary == null){
             return false;
         }
 
+
+        //full word case
         if(dictionary.contains(input)){
             return true;
         }
+
+
+        //partial words case
         boolean returnVal = false;
         for(int i=0; i<input.length(); i++){
             if(isValidWordBreak(input.substring(0,i),dictionary) &&

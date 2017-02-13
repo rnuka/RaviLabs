@@ -46,15 +46,8 @@ public class MaxProfitJobs {
     }
 
     public int[] maximumProfit(List<Job> input){
-        //Java-7 Way
-        /*Collections.sort(input, new Comparator<Job>() {
-            public int compare(Job j1, Job j2) {
-                return j2.profit - j1.profit;
-            }
-        });*/
 
-        //Collections.sort(input,(j1,j2)->(j2.profit-j1.profit));  //JAVA-8 Way1
-        input.sort((j1,j2)->(j2.profit-j1.profit));  //JAVA-8 Way2
+        input.sort((j1,j2)->(j2.profit-j1.profit));  //JAVA-8
 
         int[] results = new int[input.size()];
 

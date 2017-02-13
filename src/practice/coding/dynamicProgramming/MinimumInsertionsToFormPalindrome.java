@@ -13,9 +13,12 @@ Before we go further, let us understand with few examples:
 
 Subproblem:
 
-    min_insertions(s,low,high) = min_insertions(low+1,high-1) if low=high
+    min_insertions(s,low,high) = 1           if high = low+1 and s[high] != s[low]
+                               = 0           if high = low+1 and s[high] == s[low]
+                               = min_insertions(low+1,high-1)          if low=high
                                = min { min_insertions(low,high-1),
-                                       min_insertions(low+1,high) } Otherwise
+                                       min_insertions(low+1,high) }    Otherwise
+
 
  */
 public class MinimumInsertionsToFormPalindrome {

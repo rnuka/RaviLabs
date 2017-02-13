@@ -33,7 +33,8 @@ Sub-problem::
 max_product(a,b,m,n) = max{ max_product(a,b,m-1,n-1)+(m*n),
                               max_product(a,b,m-1,n)
                              }
-                     = m*n when n=1
+                     = m*n when n=1 and m = 1
+                     = 0 when n < 1 and m < 1
 ************************************************************
 
  */

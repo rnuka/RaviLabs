@@ -18,6 +18,8 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 [4,2,0,2,3,2,0] -> [4,2,0,3,0,2,2]
 
 https://leetcode.com/problems/next-permutation/
+
+Solution: http://www.programcreek.com/2014/06/leetcode-next-permutation-java/
  */
 public class NextPermutation {
     public void nextPermutation(int[] nums) {

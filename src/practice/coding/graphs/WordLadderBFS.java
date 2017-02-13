@@ -81,6 +81,16 @@ public class WordLadderBFS {
         }
     }
 
+    public void testcase2(){
+        Set<String> dictionary = new HashSet<>();
+        dictionary.add("pqr");
+
+        String source = "abc";
+        String target = "xyz";
+        System.out.println("transformation distance for source+"+source+" to target::"+target+" is :: "+
+                countTransformations(dictionary,source, target));
+    }
+
     public void testcase1(){
         Set<String> dictionary = new HashSet<>();
         dictionary.add("hot");
@@ -96,7 +106,7 @@ public class WordLadderBFS {
     }
 
     public void testbed(){
-        testcase1();
+        testcase2();
     }
 
     public static void main(String args[]){

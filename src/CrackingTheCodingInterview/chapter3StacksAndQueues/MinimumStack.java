@@ -10,11 +10,11 @@ Question 3.2 How would you design a stack which, in addition to push and pop, al
 function min which returns the minimum element? Push, pop and min should all
 operate in 0(1) time.
  */
-public class StackExtension extends Stack<Integer> {
+public class MinimumStack extends Stack<Integer> {
 
     Stack<Integer> minStack;
 
-    public StackExtension() {
+    public MinimumStack() {
         minStack = new Stack<Integer>();
     }
 
@@ -47,7 +47,7 @@ public class StackExtension extends Stack<Integer> {
 
     //test
     public static void main(String[] args){
-        StackExtension se = new StackExtension();
+        MinimumStack se = new MinimumStack();
         se.push(10);
         se.push(2);
         se.push(5);
