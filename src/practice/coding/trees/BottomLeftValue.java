@@ -46,7 +46,8 @@ public class BottomLeftValue {
         }
     }
     public int findBottomLeftValue(TreeNode root) {
-        int[] result = new int[2]; //0 index for result, 1 index for level
+        int[] result = new int[2];
+        //0 index for result, 1 index for level
         result[1] = -1;
         findBottomLeftValue(root, result, 0);
         return result[0];
